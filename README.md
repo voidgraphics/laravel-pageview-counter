@@ -43,7 +43,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
 ## Accessing the data
 
-Every request hitting those routes will now be logged. You can access that data using the `PageviewCounter\Models\Pageview` model. It has 3 scopes to help you prepare the data for display.
+Every request hitting those routes will now be logged. You can access that data using the `PageviewCounter\Models\Pageview` model. It has 3 scopes to help you query the data.
 
 ```php
 Pageview::daily()->get(); // Returns the number of views grouped by date and path.
