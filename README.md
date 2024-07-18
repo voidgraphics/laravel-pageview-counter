@@ -2,6 +2,8 @@
 
 A stupid simple analytics tool to keep track of page views in Laravel projects. It logs requests to a database table and you can access the data with an Eloquent model.
 
+Based on [this article](https://medium.com/@bastiaanrudolf/a-rudimental-approach-to-web-analytics-with-laravel-818296a70cd0) by Bastiaan Rudolf.
+
 ## Installation
 
 ```bash
