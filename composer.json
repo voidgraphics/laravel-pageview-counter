@@ -1,0 +1,25 @@
+{
+    "name": "voidgraphics/laravel-pageview-counter",
+    "description": "A stupid simple analytics tool to keep track of page views",
+    "autoload": {
+        "psr-4": {
+            "PageviewCounter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Adrien Leloup",
+            "email": "adrien@leloup.dev"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PageviewCounter\\ServiceProvider"
+            ]
+        }
+    }
+}
