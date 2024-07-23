@@ -16,6 +16,12 @@ class Pageview extends Model
             ->orderBy('date', 'desc');
     }
 
+    public function scopeByPage(Builder $query): Builder
+    {
+        return $query->selectRaw('COUNT(*) views, path, COUNT(DISTINCT visitorid) unique_visitors, MAX(created_at) latest_visit')
+            ->groupBy('path');
+    }
+
     public function scopeWithoutBots(Builder $query): Builder
     {
         return $query->where('useragent', 'not like', '%bot%')
@@ -29,7 +35,6 @@ class Pageview extends Model
     public function scopeUniqueVisitors(Builder $query): Builder
     {
         return $query->selectRaw('COUNT(DISTINCT visitorid) unique_visitors, DATE(created_at) date')
-                ->groupBy(['date'])
-                ->orderBy('date', 'desc');
+                ->groupBy(['date']);
     }
 }
