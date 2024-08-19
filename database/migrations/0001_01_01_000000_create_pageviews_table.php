@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('method', 12);
             $table->text('useragent');
             $table->string('visitorid');
+            $table->text('referer')->nullable();
             $table->timestamps();
         });
     }

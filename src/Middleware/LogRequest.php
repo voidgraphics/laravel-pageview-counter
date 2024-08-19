@@ -12,13 +12,14 @@ class LogRequest
     {
         // Make it an after middleware
         $response = $next($request);
- 
+
         try {
             Pageview::create([
                 'path' => $request->path(),
                 'method' => $request->method(),
                 'useragent' => $request->userAgent(),
-                'visitorid' => crypt($request->ip(), config('app.key'))
+                'visitorid' => crypt($request->ip(), config('app.key')),
+                'referer' => $request->headers->get('referer')
             ]);
             
             return $response;
