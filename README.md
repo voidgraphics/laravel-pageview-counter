@@ -79,6 +79,27 @@ Illuminate\Database\Eloquent\Collection {
 ```
 
 ```php
+Pageview::byPage()->get(); // Get pageviews, grouped by page
+
+Illuminate\Database\Eloquent\Collection {#3604
+    all: [
+        App\Models\Pageview {#3603
+            views: 230,
+            path: "/",
+            unique_visitors: 178,
+            latest_visit: "2024-07-23 12:59:19",
+        },
+        App\Models\Pageview {#3601
+            views: 132,
+            path: "about",
+            unique_visitors: 129,
+            latest_visit: "2024-07-20 14:27:38",
+        },
+    ],
+}
+```
+
+```php
 Pageview::withoutBots()->get(); // Exclude most popular bots by user-agent
 
 /*
